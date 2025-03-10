@@ -1,9 +1,9 @@
 
         :root {
-            --primary-color: #481062;
+            --primary-color: #692172;
             --secondary-color: #64B5F6;
             --background-color: #ffffffd3;
-            --card-color: #ffffffd3;
+            --card-color: #e7deded3;
             --text-color: #333333;
             --light-text: #757575;
             --accent-color: #ff9800;
@@ -21,7 +21,7 @@
          }
 
         body {
-            background-image: url(https://img.freepik.com/free-photo/galaxy-planets-digital-art_23-2151727685.jpg?t=st=1741368471~exp=1741372071~hmac=e2feca630aa2f0612207f36ae04ebb9a7fb58dc6975dd2fa40ad4cb6d81ab20d&w=1380);
+            background-image: url(https://static.vecteezy.com/system/resources/previews/013/928/081/original/abstract-gradient-wallpaper-design-backdrop-for-presentation-concept-app-screen-cover-template-sidebar-for-creative-graphic-design-illustration-vector.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             color: var(--text-color);
@@ -338,6 +338,9 @@
 
         .section-header h3 {
             font-size: 1.4rem;
+            color: white;
+            font-family: "Audiowide", sans-serif;
+            
         }
 
         .forecast-toggle {
