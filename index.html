@@ -13,6 +13,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    
+    <div id="loading" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading weather data...</p>
+        </div>
+    </div>
+
+    
+    <div id="error-message" class="error-message" style="display: none;"></div>
+
     <div class="container">
         <header>
             <div class="logo">
@@ -42,6 +53,8 @@
                     <div class="weather-condition">
                         <i class="fas fa-cloud-sun weather-icon" id="weather-icon"></i>
                         <div class="condition-text" id="condition-text">Partly Cloudy</div>
+                    
+                        <div class="weather-description" id="weather-description" style="display: none;">Partly Cloudy</div>
                     </div>
                 </div>
                 
@@ -154,7 +167,7 @@
             </div>
         </div>
 
-        <!-- Forecast section -->
+        
         <div class="forecast-section">
             <div class="section-header">
                 <h3>Weather Forecast</h3>
@@ -294,3 +307,118 @@
             </div>
         </div>
     </div>
+
+    <style>
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            text-align: center;
+            color: white;
+        }
+
+        .loading-spinner i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .loading-spinner p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .error-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff4757;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px;
+        }
+
+        .weather-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Styles for dynamically created forecast items */
+        .hourly-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 0.5rem;
+            min-width: 120px;
+        }
+
+        .hourly-item .time {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .hourly-item .temp {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .hourly-item .desc {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .daily-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .daily-item .day {
+            font-weight: bold;
+            min-width: 80px;
+        }
+
+        .daily-item .temps {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .daily-item .max {
+            font-weight: bold;
+        }
+
+        .daily-item .min {
+            color: #666;
+        }
+
+        .daily-item .desc {
+            color: #888;
+            min-width: 100px;
+            text-align: right;
+        }
+    </style>
+</body>
+</html>
